@@ -7,11 +7,11 @@ import (
 )
 
 // TestStore ...
-func TestStore(t *testing.T, databeseURL string) (*Store, func(...string)) {
+func TestStore(t *testing.T, databaseURL string) (*Store, func(...string)) {
 	t.Helper()
 
 	config := NewConfig()
-	config.DatabaseURL = databeseURL
+	config.DatabaseURL = databaseURL
 	s := New(config)
 
 	if err := s.Open(); err != nil {
