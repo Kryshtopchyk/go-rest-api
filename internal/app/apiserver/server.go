@@ -10,14 +10,14 @@ import (
 type server struct {
 	router *mux.Router
 	logger *logrus.Logger
-	store store.Store
+	store  store.Store
 }
 
 func newServer(store store.Store) *server {
 	s := &server{
-		router:  mux.NewRouter(),
+		router: mux.NewRouter(),
 		logger: logrus.New(),
-		store: store,
+		store:  store,
 	}
 
 	s.configureRouter()
