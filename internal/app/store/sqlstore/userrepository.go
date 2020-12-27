@@ -35,7 +35,7 @@ func (r *UserRepository) FindByEmail(email string) (*model.User, error) {
 		email,
 	).Scan(&u.Id, &u.Email, &u.EncryptedPassword); err != nil {
 		if err == sql.ErrNoRows {
-			return nil,store.ErrRecordNotFound
+			return nil, store.ErrRecordNotFound
 		}
 		return nil, err
 	}
